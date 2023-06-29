@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBundler", "MauiBundler\MauiBundler.csproj", "{D6F60497-62C5-4BC7-8E06-9290E2545E10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{BADE677B-7ABF-4F3D-ABB8-9B9348D08792}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Geolocation", "Plugins\Plugin.Geolocation\Plugin.Geolocation.csproj", "{E751D1A1-D866-484E-AE64-5C36ED3B5529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBundler.Abstractions", "MauiBundler.Abstractions\MauiBundler.Abstractions.csproj", "{CBF085DC-12D8-46EB-A0B8-E3510C85CACA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Filesystem", "Plugins\Plugin.Filesystem\Plugin.Filesystem.csproj", "{11CEA03C-5729-4276-8070-5B65CF79CE09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Intent", "Plugins\Plugin.Intent\Plugin.Intent.csproj", "{5867B003-8586-4ABB-834A-7F69AA89ADF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6F60497-62C5-4BC7-8E06-9290E2545E10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F60497-62C5-4BC7-8E06-9290E2545E10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F60497-62C5-4BC7-8E06-9290E2545E10}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D6F60497-62C5-4BC7-8E06-9290E2545E10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F60497-62C5-4BC7-8E06-9290E2545E10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F60497-62C5-4BC7-8E06-9290E2545E10}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E751D1A1-D866-484E-AE64-5C36ED3B5529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E751D1A1-D866-484E-AE64-5C36ED3B5529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E751D1A1-D866-484E-AE64-5C36ED3B5529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E751D1A1-D866-484E-AE64-5C36ED3B5529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF085DC-12D8-46EB-A0B8-E3510C85CACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF085DC-12D8-46EB-A0B8-E3510C85CACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF085DC-12D8-46EB-A0B8-E3510C85CACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF085DC-12D8-46EB-A0B8-E3510C85CACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11CEA03C-5729-4276-8070-5B65CF79CE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CEA03C-5729-4276-8070-5B65CF79CE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11CEA03C-5729-4276-8070-5B65CF79CE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11CEA03C-5729-4276-8070-5B65CF79CE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5867B003-8586-4ABB-834A-7F69AA89ADF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5867B003-8586-4ABB-834A-7F69AA89ADF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5867B003-8586-4ABB-834A-7F69AA89ADF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5867B003-8586-4ABB-834A-7F69AA89ADF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E751D1A1-D866-484E-AE64-5C36ED3B5529} = {BADE677B-7ABF-4F3D-ABB8-9B9348D08792}
+		{11CEA03C-5729-4276-8070-5B65CF79CE09} = {BADE677B-7ABF-4F3D-ABB8-9B9348D08792}
+		{5867B003-8586-4ABB-834A-7F69AA89ADF5} = {BADE677B-7ABF-4F3D-ABB8-9B9348D08792}
+	EndGlobalSection
+EndGlobal
