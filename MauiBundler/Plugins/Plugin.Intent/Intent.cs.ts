@@ -17,4 +17,4 @@ class Intent extends PluginBase {
   }
 }
 
-if (MauiBundler.Plugins) MauiBundler.Plugins.Intent = new Intent();
+MauiBundler.Plugins.Intent = new Intent();
