@@ -7,7 +7,7 @@ using MauiBundler.Abstractions.Extensions;
 
 namespace Plugin.Geolocation;
 
-[Plugin("Plugin.Geolocation.js", Name = "Geolocation")]
+[Plugin("Geolocation.cs.js", Name = "Geolocation")]
 public class Geolocation
 {
     [JSInvokable("Initialize")]

@@ -7,7 +7,7 @@ using MauiBundler.Abstractions.Extensions;
 namespace Plugin.Intent;
 
 
-[Plugin("Plugin.Intent.js", Name = "Intent")]
+[Plugin("Intent.cs.js", Name = "Intent")]
 public class Intent
 {
     [JSInvokable("Initialize")]

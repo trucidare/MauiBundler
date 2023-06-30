@@ -1,12 +1,12 @@
-export class BasePlugin {
-    namespace = null;
-    dotnetRef = null;
-
-    initialize(namespace, dotnetRed) {
+export class PluginBase {
+    constructor() {
+        console.log(`MauiBundler::JS -> Initialized ${this.constructor.name}!`);
+    }
+    initialize(namespace, dotnetRef) {
         this.namespace = namespace;
-        this.dotnetRef = dotnetRed;
-        
-        console.log('MauiBundler::JS -> Initialized Intent!');
-      }
-  
+        this.dotnetRef = dotnetRef;
+    }
+    invokeMethodAsync(name, ...args) {
+        return this.dotnetRef.invokeMethodAsync(name, ...args);
+    }
 }

@@ -7,7 +7,7 @@ using MauiBundler.Abstractions.Interfaces;
 
 namespace Plugin.Filesystem;
 
-[Plugin("Plugin.Filesystem.js", Name = "Filesystem")]
+[Plugin("Filesystem.cs.js", Name = "Filesystem")]
 public class Filesystem
 {
 
