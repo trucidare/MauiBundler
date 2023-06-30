@@ -8,7 +8,7 @@ namespace Plugin.Intent.Services;
 
 public class IntentService : IIntentService
 {
-    private IPluginService jsRuntime = ServiceHelper.GetService<IPluginService>();
+    private readonly IPluginService jsRuntime = ServiceHelper.GetService<IPluginService>();
 
     [JSInvokable("addIntentFilter")]
     public void AddIntentFilter(string category, string action)
