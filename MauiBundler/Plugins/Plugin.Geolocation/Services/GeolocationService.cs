@@ -1,11 +1,7 @@
-namespace Plugin.Filesystem.Services;
+namespace Plugin.Geolocation.Services;
 
-public interface IGeolocationService
+public interface IGeoLocationService
 {
-
-}
-
-public class GeolocationService : IGeolocationService
-{
-
+    void Start();
+    void Stop();
 }
