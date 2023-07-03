@@ -44,10 +44,5 @@
     <Compile Remove="**\*.windows.cs" />
     <None Include="**\*.windows.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
   </ItemGroup>
-
-   <ItemGroup Condition="$(TargetFramework.EndsWith('-ios'))">
-    <None Remove="**\*.json" />
-    <Content Remove="**\*.json" />
-  </ItemGroup>
   
 </Project>

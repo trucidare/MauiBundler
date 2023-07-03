@@ -62,9 +62,9 @@
 	  <ProjectReference Include="..\..\..\MauiBundler\Plugins\Plugin.Geolocation\Plugin.Geolocation.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	 <Compile Remove="**\*.windows.json" />
-		<None Remove="**\*.json" />
-	</ItemGroup>
+	<!-- <ItemGroup>
+	 	<Compile Remove="**\*.windows.json" />
+		<None Remove="**\tsconfig.json" />
+	</ItemGroup> -->
 
 </Project>
