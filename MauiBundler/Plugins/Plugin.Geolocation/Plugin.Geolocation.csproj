@@ -30,6 +30,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
     <CreatePackage>false</CreatePackage>
   </PropertyGroup>
+
   <ItemGroup Condition="$(TargetFramework.StartsWith('net7.0-ios')) != true AND $(TargetFramework.StartsWith('net7.0-maccatalyst')) != true">
     <Compile Remove="**\**\*.macios.cs" />
     <None Include="**\**\*.macios.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
@@ -43,6 +44,10 @@
   <ItemGroup Condition="$(TargetFramework.Contains('-windows')) != true">
     <Compile Remove="**\*.windows.cs" />
     <None Include="**\*.windows.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+  </ItemGroup>
+
+   <ItemGroup Condition="$(TargetFramework.EndsWith('-ios'))">
+    <Content Remove="**\*.json" />
   </ItemGroup>
 
 </Project>

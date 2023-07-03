@@ -44,4 +44,17 @@
     <Compile Remove="**\*.windows.cs" />
     <None Include="**\*.windows.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
   </ItemGroup>
+
+
+  <PropertyGroup>
+    <TypeScriptAllowJS>true</TypeScriptAllowJS>
+    <TypeScriptBuildMode>true</TypeScriptBuildMode>
+    <TypeScriptModuleKind>ES2020</TypeScriptModuleKind>
+    <TypeScriptTarget>ES2020</TypeScriptTarget>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptModuleResolution>Bundler</TypeScriptModuleResolution>
+    <TypeScriptOutDir>wwwroot/</TypeScriptOutDir>
+    <TypeScriptAdditionalFlags>$(TypeScriptAdditionalFlags) --excludeDirectories wwwroot --types ../../MauiBundler.Abstractions/Typescript/globals</TypeScriptAdditionalFlags>
+  </PropertyGroup>
+  
 </Project>
