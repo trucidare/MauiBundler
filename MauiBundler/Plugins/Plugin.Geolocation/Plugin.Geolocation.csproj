@@ -46,4 +46,8 @@
     <None Include="**\*.windows.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="tsconfig.json" />
+    <Content Include="tsconfig.json" PublishFolderType="None" />
+  </ItemGroup>  
 </Project>
