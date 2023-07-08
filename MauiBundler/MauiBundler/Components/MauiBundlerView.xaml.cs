@@ -12,7 +12,7 @@ public partial class MauiBundlerView : ContentPage
 		mauiWebView.BlazorWebViewInitialized += BlazorWebViewInitialized;
 	}
 
-    private void BlazorWebViewInitialized(object? sender, BlazorWebViewInitializedEventArgs e) 
+    private void BlazorWebViewInitialized(object sender, BlazorWebViewInitializedEventArgs e) 
     {
 #if IOS || MACCATALYST
         if ((DeviceInfo.Current.Platform == DevicePlatform.MacCatalyst && DeviceInfo.Current.Version >= new Version(13, 3)) ||
