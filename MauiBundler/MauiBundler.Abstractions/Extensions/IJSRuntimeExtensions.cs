@@ -25,6 +25,16 @@ public static class IJSRuntimeExtensions
                 if ((attr = t.GetCustomAttribute<PluginAttribute>()!) != null)
                     result.Add((attr, t.Namespace!));
 
+
+         var refFiles = Directory.GetFiles(Path.GetDirectoryName(anchor.Location) ?? ".")
+                .Where(s => s.Contains("Plugin", StringComparison.InvariantCultureIgnoreCase)
+                         && s.Contains("dll", StringComparison.InvariantCultureIgnoreCase));
+
+        foreach (var refFile in refFiles)
+            foreach (var t in Assembly.LoadFrom(refFile).GetTypes())
+                if ((attr = t.GetCustomAttribute<PluginAttribute>()!) != null)
+                    result.Add((attr, t.Namespace!));
+
         return result.ToArray();
     }
 

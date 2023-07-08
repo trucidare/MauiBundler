@@ -28,7 +28,10 @@ public class GeoLocationService : IGeoLocationService
             var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
             if (status != PermissionStatus.Granted)
             {
-                Task.Run(async () => await PublishStatusChangedEvent("Permission for location is not granted, we can't get location updates")).GetAwaiter().GetResult();
+                Task.Run(async () => await PublishStatusChangedEvent("Permission for location is not granted, we can't get location updates"))
+                    .GetAwaiter()
+                    .GetResult();
+                
                 return;
             }
             iosLocationManager.RequestAlwaysAuthorization();
