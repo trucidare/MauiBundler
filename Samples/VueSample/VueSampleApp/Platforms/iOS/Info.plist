@@ -28,5 +28,11 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>TestApp</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>TestApp</string>
+	<key>Custom Property</key>
+	<string>asdas</string>
 </dict>
 </plist>

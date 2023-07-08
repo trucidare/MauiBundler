@@ -16,7 +16,7 @@
 		<ApplicationTitle>VueSampleApp</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.vuesampleapp</ApplicationId>
+		<ApplicationId>com.nto.vuesampleapp</ApplicationId>
 		<ApplicationIdGuid>ec8b67fe-4dc8-4342-85c9-e26601adbdf4</ApplicationIdGuid>
 
 		<!-- Versions -->
