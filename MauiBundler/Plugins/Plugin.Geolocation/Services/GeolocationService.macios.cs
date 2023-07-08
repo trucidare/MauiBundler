@@ -21,6 +21,7 @@ public class GeoLocationService : IGeoLocationService
         };
     }
 
+    [JSInvokable("start")]
     public void Start()
     {
         MainThread.BeginInvokeOnMainThread(async () =>
@@ -31,7 +32,7 @@ public class GeoLocationService : IGeoLocationService
                 Task.Run(async () => await PublishStatusChangedEvent("Permission for location is not granted, we can't get location updates"))
                     .GetAwaiter()
                     .GetResult();
-                
+
                 return;
             }
             iosLocationManager.RequestAlwaysAuthorization();
@@ -40,13 +41,14 @@ public class GeoLocationService : IGeoLocationService
         });
     }
 
-     private void LocationsUpdated(object? sender, CLLocationsUpdatedEventArgs? e)
-        {
-            var locations = e!.Locations;
-            var loc = new Models.Location(locations[^1].Coordinate.Latitude, locations[^1].Coordinate.Longitude, (float)locations[^1].Course, locations[^1].Altitude, (float)locations[^1].CourseAccuracy!);
-            Task.Run(async () => await jsRuntime.InprocessJSRuntime!.InvokeVoidAsync($"MauiBundler.Plugins.{nameof(GeoLocation)}.locationChanged", loc));
-        }
+    private void LocationsUpdated(object? sender, CLLocationsUpdatedEventArgs? e)
+    {
+        var locations = e!.Locations;
+        var loc = new Models.Location(locations[^1].Coordinate.Latitude, locations[^1].Coordinate.Longitude, (float)locations[^1].Course, locations[^1].Altitude, (float)locations[^1].CourseAccuracy!);
+        Task.Run(async () => await jsRuntime.InprocessJSRuntime!.InvokeVoidAsync($"MauiBundler.Plugins.{nameof(GeoLocation)}.locationChanged", loc));
+    }
 
+    [JSInvokable("stop")]
     public void Stop()
     {
         throw new NotImplementedException();
