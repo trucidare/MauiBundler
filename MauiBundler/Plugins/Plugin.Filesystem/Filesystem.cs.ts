@@ -1,7 +1,3 @@
-export enum Directories {
-
-}
-
 class Filesystem extends PluginBase {
 
     async fileExists(path: string) {
