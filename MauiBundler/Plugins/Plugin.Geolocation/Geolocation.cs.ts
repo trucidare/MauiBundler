@@ -1,4 +1,4 @@
-export class GeoPosition {
+export interface GeoPosition {
     accuracy: number;
     altitude: number;
     bearing: number;
