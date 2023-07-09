@@ -1,6 +1,35 @@
-class GeoLocation extends PluginBase {
-    
+export interface GeoPosition {
+    accuracy: number;
+    altitude: number;
+    bearing: number;
+    latitude: number;
+    longitude: number;
 }
-  
-MauiBundler.Plugins.Geolocation = new GeoLocation();
-  
+
+class GeoLocation extends PluginBase {
+    #handler = [];
+
+    start() {
+        this.invokeMethodAsync("start");
+    }
+
+    stop() {
+        this.invokeMethodAsync("stop");
+    }
+
+    addLocationHandler(cb) {
+        this.#handler.push(cb);
+    }
+
+    locationChanged(location: GeoPosition) {
+        this.#handler.forEach(
+            cb => cb(location)
+        );
+    }
+
+    statusChanged(message) {
+        console.log(message);
+    }
+}
+
+MauiBundler.Plugins.GeoLocation = new GeoLocation();

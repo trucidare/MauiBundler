@@ -1,4 +1,4 @@
-using Plugin.Filesystem.Services;
+using Plugin.Geolocation.Services;
 using Microsoft.Extensions.Configuration;
 
 namespace Plugin.Geolocation;
@@ -9,6 +9,6 @@ public static class Startup
     {
         Console.WriteLine($"MauiBundler::ConfigureServices -> Configure Geolocation services");
         
-        services.AddScoped<IGeolocationService, GeolocationService>();
+        services.AddScoped<IGeoLocationService, GeoLocationService>();
     }
 }

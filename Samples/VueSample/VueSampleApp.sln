@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VueSampleApp", "VueSampleApp/VueSampleApp.csproj", "{DDDC1602-BFBD-4FA5-B959-6AF69D69A173}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VueSampleApp", "VueSampleApp\VueSampleApp.csproj", "{DDDC1602-BFBD-4FA5-B959-6AF69D69A173}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBundler", "..\..\MauiBundler\MauiBundler\MauiBundler.csproj", "{71AC6FD6-68CD-4482-91FF-FDA633005F76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBundler.Abstractions", "..\..\MauiBundler\MauiBundler.Abstractions\MauiBundler.Abstractions.csproj", "{19B67A57-019B-47ED-9FB5-22382042D7FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Intent", "..\..\MauiBundler\Plugins\Plugin.Intent\Plugin.Intent.csproj", "{8D52A746-94EB-418B-B450-49112243DF74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Geolocation", "..\..\MauiBundler\Plugins\Plugin.Geolocation\Plugin.Geolocation.csproj", "{045C2FBA-048C-455D-BE7C-DC0B550B6ADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Filesystem", "..\..\MauiBundler\Plugins\Plugin.Filesystem\Plugin.Filesystem.csproj", "{D4132FD0-9444-4921-95C2-672FCF7B2738}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{98F543E5-D419-44EA-BCEC-D2BCDDD4723A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bundler", "Bundler", "{126B70EA-CCF7-4417-A8ED-BA8FC6087756}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,11 +31,38 @@ Global
 		{DDDC1602-BFBD-4FA5-B959-6AF69D69A173}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDDC1602-BFBD-4FA5-B959-6AF69D69A173}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DDDC1602-BFBD-4FA5-B959-6AF69D69A173}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{71AC6FD6-68CD-4482-91FF-FDA633005F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71AC6FD6-68CD-4482-91FF-FDA633005F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71AC6FD6-68CD-4482-91FF-FDA633005F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71AC6FD6-68CD-4482-91FF-FDA633005F76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B67A57-019B-47ED-9FB5-22382042D7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B67A57-019B-47ED-9FB5-22382042D7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B67A57-019B-47ED-9FB5-22382042D7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B67A57-019B-47ED-9FB5-22382042D7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D52A746-94EB-418B-B450-49112243DF74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D52A746-94EB-418B-B450-49112243DF74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D52A746-94EB-418B-B450-49112243DF74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D52A746-94EB-418B-B450-49112243DF74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{045C2FBA-048C-455D-BE7C-DC0B550B6ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{045C2FBA-048C-455D-BE7C-DC0B550B6ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{045C2FBA-048C-455D-BE7C-DC0B550B6ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{045C2FBA-048C-455D-BE7C-DC0B550B6ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4132FD0-9444-4921-95C2-672FCF7B2738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4132FD0-9444-4921-95C2-672FCF7B2738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4132FD0-9444-4921-95C2-672FCF7B2738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4132FD0-9444-4921-95C2-672FCF7B2738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4132FD0-9444-4921-95C2-672FCF7B2738} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
+		{045C2FBA-048C-455D-BE7C-DC0B550B6ADC} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
+		{8D52A746-94EB-418B-B450-49112243DF74} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
+		{71AC6FD6-68CD-4482-91FF-FDA633005F76} = {126B70EA-CCF7-4417-A8ED-BA8FC6087756}
+		{19B67A57-019B-47ED-9FB5-22382042D7FB} = {126B70EA-CCF7-4417-A8ED-BA8FC6087756}
 	EndGlobalSection
 EndGlobal

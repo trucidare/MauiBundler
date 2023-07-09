@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using MauiBundler.Abstractions.Interfaces;
@@ -19,10 +20,22 @@ public static class ServiceCollectionExtensions
             
             List<Type> types = new(); 
             var refs = asm.GetReferencedAssemblies()
-                .Where(s => s.Name!.Contains("Plugin", StringComparison.InvariantCultureIgnoreCase));
+                .Where(s => s.Name!.Contains("Plugin", StringComparison.InvariantCultureIgnoreCase))
+                .ToList();
 
-            foreach (var r in refs) 
-                types.AddRange(Assembly.Load(r).GetTypes());
+            var refFiles = Directory.GetFiles(Path.GetDirectoryName(asm.Location) ?? ".")
+                .Where(s => s.Contains("Plugin", StringComparison.InvariantCultureIgnoreCase)
+                         && s.Contains("dll", StringComparison.InvariantCultureIgnoreCase));
+
+         
+            if (refFiles != null)
+                foreach (var r in refFiles)
+                    types.AddRange(Assembly.LoadFrom(r).GetTypes());
+
+            if (refs != null)
+                foreach (var r in refs)
+                    types.AddRange(Assembly.Load(r).GetTypes());
+
 
             var query = from type in types
                         where type.IsSealed && !type.IsGenericType && !type.IsNested
@@ -40,7 +53,7 @@ public static class ServiceCollectionExtensions
         }
         catch (Exception e)
         {
-            Console.WriteLine($"MauiBundler::AddExternalModules -> Error adding external modules {e.Message} {Environment.NewLine} {e.StackTrace}");
+            Debug.WriteLine($"MauiBundler::AddExternalModules -> Error adding external modules {e.Message} {Environment.NewLine} {e.StackTrace}");
         }
     }
 }
