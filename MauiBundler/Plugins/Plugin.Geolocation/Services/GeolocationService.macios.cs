@@ -51,7 +51,7 @@ public class GeoLocationService : IGeoLocationService
     [JSInvokable("stop")]
     public void Stop()
     {
-        throw new NotImplementedException();
+        iosLocationManager.StopUpdatingLocation();
     }
 
     private async Task PublishStatusChangedEvent(string message)
