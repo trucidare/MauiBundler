@@ -5,6 +5,6 @@ namespace Plugin.Device.Services;
 
 public interface IDeviceService
 {
-    string DeviceId();
-    string InstallationId();
+    string? DeviceId();
+    string? InstallationId();
 }

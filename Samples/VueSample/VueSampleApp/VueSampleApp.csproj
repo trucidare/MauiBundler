@@ -31,9 +31,6 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
-	<!--<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
-	  <CreatePackage>false</CreatePackage>
-	</PropertyGroup>-->
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
@@ -66,10 +63,5 @@
 	  <ProjectReference Include="..\..\..\MauiBundler\Plugins\Plugin.Geolocation\Plugin.Geolocation.csproj" />
 	  <ProjectReference Include="..\..\..\MauiBundler\Plugins\Plugin.Device\Plugin.Device.csproj" />
 	</ItemGroup>
-
-	<!-- <ItemGroup>
-	 	<Compile Remove="**\*.windows.json" />
-		<None Remove="**\tsconfig.json" />
-	</ItemGroup> -->
 
 </Project>

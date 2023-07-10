@@ -13,8 +13,8 @@ public static class ServiceCollectionExtensions
         services.AddMauiBlazorWebView();
 	    services.AddMauiBundlerInternal(configuration, anchor);
 
-         if (Preferences.Get(Constants.kInstallationGuid, null) == null)
-            Preferences.Set(Constants.kInstallationGuid, Guid.NewGuid().ToString());
+         if (Preferences.Get(Constants.INSTALLATION_GUID, null) == null)
+            Preferences.Set(Constants.INSTALLATION_GUID, Guid.NewGuid().ToString());
 
         return services;
     }

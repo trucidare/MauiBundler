@@ -7,11 +7,11 @@ namespace Plugin.Device.Services;
 public class DeviceService : IDeviceService
 {
     [JSInvokable("installationId")]
-    public string InstallationId() =>  Preferences.Get(Constants.kInstallationGuid, null) ?? "N/A";
+    public string? InstallationId() =>  Preferences.Get(Constants.INSTALLATION_GUID, null);
     
     [JSInvokable("deviceId")]
-    public string DeviceId()
+    public string? DeviceId()
     {
-        return UIDevice.CurrentDevice.IdentifierForVendor?.ToString() ?? "N/A";
+        return UIDevice.CurrentDevice.IdentifierForVendor?.ToString();
     }
 }
