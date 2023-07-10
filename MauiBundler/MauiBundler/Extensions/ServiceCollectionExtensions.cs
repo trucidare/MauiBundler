@@ -1,4 +1,5 @@
 using System.Reflection;
+using MauiBundler.Abstractions;
 using MauiBundler.Abstractions.Extensions;
 using Microsoft.Extensions.Configuration;
 
@@ -11,6 +12,10 @@ public static class ServiceCollectionExtensions
         services.AddBlazorWebViewDeveloperTools();
         services.AddMauiBlazorWebView();
 	    services.AddMauiBundlerInternal(configuration, anchor);
+
+         if (Preferences.Get(Constants.INSTALLATION_GUID, null) == null)
+            Preferences.Set(Constants.INSTALLATION_GUID, Guid.NewGuid().ToString());
+
         return services;
     }
 }

@@ -31,9 +31,9 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
-	<!--<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
-	</PropertyGroup>-->
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -61,11 +61,7 @@
 	  <ProjectReference Include="..\..\..\MauiBundler\Plugins\Plugin.Intent\Plugin.Intent.csproj" />
 	  <ProjectReference Include="..\..\..\MauiBundler\Plugins\Plugin.Filesystem\Plugin.Filesystem.csproj" />
 	  <ProjectReference Include="..\..\..\MauiBundler\Plugins\Plugin.Geolocation\Plugin.Geolocation.csproj" />
+	  <ProjectReference Include="..\..\..\MauiBundler\Plugins\Plugin.Device\Plugin.Device.csproj" />
 	</ItemGroup>
-
-	<!-- <ItemGroup>
-	 	<Compile Remove="**\*.windows.json" />
-		<None Remove="**\tsconfig.json" />
-	</ItemGroup> -->
 
 </Project>

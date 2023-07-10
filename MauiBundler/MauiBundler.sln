@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Filesystem", "Plugin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Intent", "Plugins\Plugin.Intent\Plugin.Intent.csproj", "{5867B003-8586-4ABB-834A-7F69AA89ADF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Device", "Plugins\Plugin.Device\Plugin.Device.csproj", "{49EA99C4-25CF-4112-A9BB-7A45113ECB3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{5867B003-8586-4ABB-834A-7F69AA89ADF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5867B003-8586-4ABB-834A-7F69AA89ADF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5867B003-8586-4ABB-834A-7F69AA89ADF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49EA99C4-25CF-4112-A9BB-7A45113ECB3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49EA99C4-25CF-4112-A9BB-7A45113ECB3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49EA99C4-25CF-4112-A9BB-7A45113ECB3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49EA99C4-25CF-4112-A9BB-7A45113ECB3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,5 +60,6 @@ Global
 		{E751D1A1-D866-484E-AE64-5C36ED3B5529} = {BADE677B-7ABF-4F3D-ABB8-9B9348D08792}
 		{11CEA03C-5729-4276-8070-5B65CF79CE09} = {BADE677B-7ABF-4F3D-ABB8-9B9348D08792}
 		{5867B003-8586-4ABB-834A-7F69AA89ADF5} = {BADE677B-7ABF-4F3D-ABB8-9B9348D08792}
+		{49EA99C4-25CF-4112-A9BB-7A45113ECB3F} = {BADE677B-7ABF-4F3D-ABB8-9B9348D08792}
 	EndGlobalSection
 EndGlobal
