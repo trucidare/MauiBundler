@@ -62,6 +62,7 @@
 	  <ProjectReference Include="..\..\..\MauiBundler\Plugins\Plugin.Filesystem\Plugin.Filesystem.csproj" />
 	  <ProjectReference Include="..\..\..\MauiBundler\Plugins\Plugin.Geolocation\Plugin.Geolocation.csproj" />
 	  <ProjectReference Include="..\..\..\MauiBundler\Plugins\Plugin.Device\Plugin.Device.csproj" />
+	  <ProjectReference Include="..\..\..\MauiBundler\Plugins\Plugin.Camera\Plugin.Camera.csproj" />
 	</ItemGroup>
 
 </Project>

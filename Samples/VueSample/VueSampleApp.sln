@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bundler", "Bundler", "{126B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Device", "..\..\MauiBundler\Plugins\Plugin.Device\Plugin.Device.csproj", "{E6594857-C937-4839-BD61-C52917E39745}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Camera", "..\..\MauiBundler\Plugins\Plugin.Camera\Plugin.Camera.csproj", "{87F93CFF-23C8-4E11-88A2-BB5447B62B98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{E6594857-C937-4839-BD61-C52917E39745}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6594857-C937-4839-BD61-C52917E39745}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6594857-C937-4839-BD61-C52917E39745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87F93CFF-23C8-4E11-88A2-BB5447B62B98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87F93CFF-23C8-4E11-88A2-BB5447B62B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87F93CFF-23C8-4E11-88A2-BB5447B62B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87F93CFF-23C8-4E11-88A2-BB5447B62B98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +77,6 @@ Global
 		{71AC6FD6-68CD-4482-91FF-FDA633005F76} = {126B70EA-CCF7-4417-A8ED-BA8FC6087756}
 		{19B67A57-019B-47ED-9FB5-22382042D7FB} = {126B70EA-CCF7-4417-A8ED-BA8FC6087756}
 		{E6594857-C937-4839-BD61-C52917E39745} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
+		{87F93CFF-23C8-4E11-88A2-BB5447B62B98} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
 	EndGlobalSection
 EndGlobal
