@@ -14,4 +14,10 @@ public class DeviceService : IDeviceService
      {
           return Windows.System.Profile.SystemIdentification.GetSystemIdForPublisher()?.Id?.ToString();
      }
+     
+     [JSInvokable("readDeviceInfo")]
+     public IDeviceInfo ReadDeviceInfo()
+     {
+          return DeviceInfo.Current;
+     }
 }

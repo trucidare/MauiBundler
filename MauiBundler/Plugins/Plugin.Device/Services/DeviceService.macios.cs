@@ -14,4 +14,10 @@ public class DeviceService : IDeviceService
     {
         return UIDevice.CurrentDevice.IdentifierForVendor?.ToString();
     }
+
+    [JSInvokable("readDeviceInfo")]
+    public IDeviceInfo ReadDeviceInfo()
+    {
+        return DeviceInfo.Current;
+    }
 }

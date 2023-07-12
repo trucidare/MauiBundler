@@ -7,4 +7,5 @@ public interface IDeviceService
 {
     string? DeviceId();
     string? InstallationId();
+    IDeviceInfo ReadDeviceInfo();
 }

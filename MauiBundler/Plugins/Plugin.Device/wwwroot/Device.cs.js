@@ -5,5 +5,8 @@ class Device extends PluginBase {
     async installationId() {
         return await this.invokeMethodAsync("installationId");
     }
+    async readDeviceInfo() {
+        return await this.invokeMethodAsync("readDeviceInfo");
+    }
 }
 MauiBundler.Plugins.Device = new Device();

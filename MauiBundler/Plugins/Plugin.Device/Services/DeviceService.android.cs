@@ -15,4 +15,10 @@ public class DeviceService : IDeviceService
         var context = Android.App.Application.Context;
         return Secure.GetString(context.ContentResolver, Secure.AndroidId);
     }
+
+    [JSInvokable("readDeviceInfo")]
+    public IDeviceInfo ReadDeviceInfo()
+    {
+        return DeviceInfo.Current;
+    }
 }
