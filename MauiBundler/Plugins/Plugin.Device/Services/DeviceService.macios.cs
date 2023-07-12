@@ -20,4 +20,10 @@ public class DeviceService : IDeviceService
     {
         return DeviceInfo.Current;
     }
+
+    [JSInvokable("displayInfo")]
+    public IDeviceDisplay DisplayInfo()
+    {
+        return DeviceDisplay.Current;
+    }
 }
