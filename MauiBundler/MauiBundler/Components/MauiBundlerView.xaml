@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:b="clr-namespace:Microsoft.AspNetCore.Components.WebView.Maui;assembly=Microsoft.AspNetCore.Components.WebView.Maui"
              xmlns:mb="clr-namespace:MauiBundler.Bootstrap"
+             xmlns:aa="clr-namespace:MauiBundler.Components"
              x:Class="MauiBundler.Components.MauiBundlerView">
 
-    <b:BlazorWebView x:Name="mauiWebView" HostPage="wwwroot/index.html">
-        <b:BlazorWebView.RootComponents>
+    <aa:FilesBlazorWebView x:Name="mauiWebView" HostPage="wwwroot/index.html">
+        <aa:FilesBlazorWebView.RootComponents>
             <b:RootComponent Selector="#_blazApp" ComponentType="{x:Type mb:Main}" />
-        </b:BlazorWebView.RootComponents>
-    </b:BlazorWebView>
+        </aa:FilesBlazorWebView.RootComponents>
+    </aa:FilesBlazorWebView>
 </ContentPage>
