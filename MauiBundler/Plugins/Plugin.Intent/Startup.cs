@@ -10,5 +10,6 @@ public static class Startup
         Console.WriteLine($"MauiBundler::ConfigureServices -> Configure Intent services");
         
         services.AddSingleton<IIntentService, IntentService>();
+        services.AddSingleton<IAppActionsService, AppActionsService>();
     }
 }
