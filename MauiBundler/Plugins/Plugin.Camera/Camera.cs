@@ -1,4 +1,3 @@
-using Plugin.Helper;
 using Microsoft.JSInterop;
 using MauiBundler.Abstractions.Extensions;
 using MauiBundler.Abstractions.Attributes;
@@ -14,8 +13,8 @@ public class Camera
     [JSInvokable("Initialize")]
     public static async Task Initialize()
     {
-        var js = ServiceHelper.GetService<IPluginService>();
-        var fs = ServiceHelper.GetService<ICameraService>();
+        var js = IPlatformApplication.Current?.Services.GetService<IPluginService>();
+        var fs = IPlatformApplication.Current?.Services.GetService<ICameraService>();
 
         await js.InitializePluginInterop(fs, typeof(Camera));
         

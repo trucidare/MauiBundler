@@ -1,4 +1,3 @@
-using Plugin.Helper;
 using Microsoft.JSInterop;
 using Plugin.Device.Services;
 using MauiBundler.Abstractions.Extensions;
@@ -14,8 +13,8 @@ public class Device
     [JSInvokable("Initialize")]
     public static async Task Initialize()
     {
-        var js = ServiceHelper.GetService<IPluginService>();
-        var fs = ServiceHelper.GetService<IDeviceService>();
+        var js = IPlatformApplication.Current?.Services.GetService<IPluginService>();
+        var fs = IPlatformApplication.Current?.Services.GetService<IDeviceService>();
 
         await js.InitializePluginInterop(fs, typeof(Device));
         

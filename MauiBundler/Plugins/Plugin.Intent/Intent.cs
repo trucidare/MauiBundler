@@ -2,10 +2,9 @@ using MauiBundler.Abstractions.Attributes;
 using MauiBundler.Abstractions.Interfaces;
 using Microsoft.JSInterop;
 using Plugin.Intent.Services;
-using Plugin.Helper;
 using MauiBundler.Abstractions.Extensions;
-namespace Plugin.Intent;
 
+namespace Plugin.Intent;
 
 [Plugin("Intent.cs.js", Name = "Intent")]
 public class Intent
@@ -13,8 +12,8 @@ public class Intent
     [JSInvokable("Initialize")]
     public static async Task Initialize()
     {
-        var js = ServiceHelper.GetService<IPluginService>();
-        var fs = ServiceHelper.GetService<IIntentService>();
+        var js = IPlatformApplication.Current?.Services.GetService<IPluginService>();
+        var fs = IPlatformApplication.Current?.Services.GetService<IIntentService>();
 
         await js.InitializePluginInterop(fs, typeof(Intent));
         

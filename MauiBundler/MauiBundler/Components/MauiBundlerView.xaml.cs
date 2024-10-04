@@ -43,6 +43,7 @@ public partial class MauiBundlerView : ContentPage
     private string[] ListFiles(string root) 
     {
         var result = new List<string>();
+#if ANDROID
         foreach (var s in Platform.AppContext.Assets.List(root))
         {
             var items = ListFiles($"{root}/{s}");
@@ -51,7 +52,7 @@ public partial class MauiBundlerView : ContentPage
             else 
                 result.AddRange(items);
         }
-
+#endif
         return result.ToArray();
     }
 

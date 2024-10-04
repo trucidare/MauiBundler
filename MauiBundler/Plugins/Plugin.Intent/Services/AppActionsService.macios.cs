@@ -2,7 +2,6 @@ using System.Text.Json;
 using MauiBundler.Abstractions.Interfaces;
 using Plugin.Intent.Services.Extensions;
 using UIKit;
-using Plugin.Helper;
 using Microsoft.JSInterop;
 using AppAction = Plugin.Intent.Models.AppAction;
 
@@ -10,7 +9,7 @@ namespace Plugin.Intent.Services;
 
 public sealed class AppActionsService : IAppActionsService, IPlatformAppActions
 {
-    private readonly IPluginService jsRuntime = ServiceHelper.GetService<IPluginService>();
+    private readonly IPluginService jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
     public void AddAppAction(string id, string title, string subtitle, string icon)
     {
         //https://github.com/lytico/maui/blob/lytico/gtk-ongoing/src/Essentials/src/AppActions/AppActions.android.cs

@@ -1,13 +1,12 @@
 using CoreLocation;
 using MauiBundler.Abstractions.Interfaces;
-using Plugin.Helper;
 using Microsoft.JSInterop;
 
 namespace Plugin.Geolocation.Services;
 
 public class GeoLocationService : IGeoLocationService
 {
-    private readonly IPluginService jsRuntime = ServiceHelper.GetService<IPluginService>();
+    private readonly IPluginService jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
 
     private CLLocationManager iosLocationManager;
 
