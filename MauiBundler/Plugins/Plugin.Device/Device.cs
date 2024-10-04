@@ -9,7 +9,6 @@ namespace Plugin.Device;
 [Plugin("Device.cs.js", Name = "Device")]
 public class Device
 {
-
     [JSInvokable("Initialize")]
     public static async Task Initialize()
     {
@@ -18,6 +17,6 @@ public class Device
 
         await js.InitializePluginInterop(fs, typeof(Device));
         
-        Console.WriteLine("MauiBundler::Initialize -> Deviceplugin initialization from interop!");
+        Console.WriteLine("MauiBundler::Initialize -> Device plugin initialization from interop!");
     }    
 }

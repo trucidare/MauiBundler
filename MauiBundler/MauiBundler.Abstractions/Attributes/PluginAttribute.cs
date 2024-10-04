@@ -1,13 +1,10 @@
 ﻿using System;
 namespace MauiBundler.Abstractions.Attributes;
 
-[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-public class PluginAttribute : Attribute
+[AttributeUsage(AttributeTargets.Class)]
+public class PluginAttribute(string javaScriptFile) : Attribute
 {
     public string? Name { get; set; }
-    public string JavaScriptFile { get; set; }
-
-    public PluginAttribute(string javaScriptFile)
-            => JavaScriptFile = javaScriptFile;
+    public string JavaScriptFile { get; set; } = javaScriptFile;
 }
 

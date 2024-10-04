@@ -9,7 +9,8 @@ namespace Plugin.Intent.Services;
 
 public sealed class AppActionsService : IAppActionsService, IPlatformAppActions
 {
-    private readonly IPluginService jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
+    private readonly IPluginService _jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
+
     public void AddAppAction(string id, string title, string subtitle, string icon)
     {
         //https://github.com/lytico/maui/blob/lytico/gtk-ongoing/src/Essentials/src/AppActions/AppActions.android.cs
@@ -17,14 +18,13 @@ public sealed class AppActionsService : IAppActionsService, IPlatformAppActions
         {
             new AppAction("battery_info", "Battery Info")
         };
-        
+
         UIApplication.SharedApplication.ShortcutItems = actions.Select(a => a.ToShortcutItem()).ToArray();
     }
 
     public async Task AppActionCalled(string id, string content)
-    {
-        await jsRuntime.InprocessJSRuntime!.InvokeVoidAsync($"MauiBundler.Plugins.{nameof(AppActions)}.appActionCalled", id, content);
-    }
+        => await _jsRuntime.InprocessJsRuntime!.InvokeVoidAsync(
+            $"MauiBundler.Plugins.{nameof(AppActions)}.appActionCalled", id, content);
 
     public void PerformActionForShortcutItem(UIApplication application, UIApplicationShortcutItem shortcutItem, UIOperationHandler completionHandler)
     {

@@ -7,20 +7,20 @@ using MauiBundler.Abstractions.Interfaces;
 
 namespace MauiBundler.Bootstrap;
 
-public partial class Main : ComponentBase
+public class Main : ComponentBase
 {
     [Inject]
-    private IJSRuntime JSRuntime { get; set; }
+    private IJSRuntime JsRuntime { get; set; }
 
     [Inject]
     private IPluginService PluginService { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        PluginService.InprocessJSRuntime = JSRuntime;
+        PluginService.InprocessJsRuntime = JsRuntime;
         
-        await JSRuntime.InvokeVoidAsync("import", Constants.JS_IMPORT_PATH);
+        await JsRuntime.InvokeVoidAsync("import", Constants.JsImportPath);
         if (PluginService.AnchorAssembly != null)
-            await JSRuntime.AddPlugins(PluginService.AnchorAssembly);
+            await JsRuntime.AddPlugins(PluginService.AnchorAssembly);
     }
 }

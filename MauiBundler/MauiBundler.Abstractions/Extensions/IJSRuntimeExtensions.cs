@@ -4,7 +4,7 @@ using MauiBundler.Abstractions.Attributes;
 
 namespace MauiBundler.Abstractions.Extensions;
 
-public static class IJSRuntimeExtensions
+public static class IjsRuntimeExtensions
 {
     public static async Task<IJSRuntime> AddPlugins(this IJSRuntime runtime, Assembly asm)
     {
@@ -26,7 +26,7 @@ public static class IJSRuntimeExtensions
                     result.Add((attr, t.Namespace!));
 
 
-         var refFiles = Directory.GetFiles(Path.GetDirectoryName(anchor.Location) ?? ".")
+        var refFiles = Directory.GetFiles(Path.GetDirectoryName(anchor.Location) ?? ".")
                 .Where(s => s.Contains("Plugin", StringComparison.InvariantCultureIgnoreCase)
                          && s.Contains("dll", StringComparison.InvariantCultureIgnoreCase));
 

@@ -6,6 +6,6 @@ namespace MauiBundler.Abstractions.Services;
 
 public class PluginService : IPluginService
 {
-    public IJSRuntime? InprocessJSRuntime { get; set; }
+    public IJSRuntime? InprocessJsRuntime { get; set; }
     public Assembly? AnchorAssembly {get;set;}
 }

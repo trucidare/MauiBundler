@@ -18,6 +18,6 @@ public class Camera
 
         await js.InitializePluginInterop(fs, typeof(Camera));
         
-        Console.WriteLine("MauiBundler::Initialize -> Cameraplugin initialization from interop!");
+        Console.WriteLine("MauiBundler::Initialize -> Camera plugin initialization from interop!");
     }    
 }

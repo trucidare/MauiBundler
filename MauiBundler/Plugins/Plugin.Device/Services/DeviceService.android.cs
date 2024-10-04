@@ -7,7 +7,8 @@ namespace Plugin.Device.Services;
 public class DeviceService : IDeviceService
 {
     [JSInvokable("installationId")]
-    public string? InstallationId() => Preferences.Get(Constants.INSTALLATION_GUID, null);
+    public string? InstallationId()
+        => Preferences.Get(Constants.InstallationGuid, null);
 
     [JSInvokable("deviceId")]
     public string? DeviceId()
@@ -18,13 +19,9 @@ public class DeviceService : IDeviceService
 
     [JSInvokable("readDeviceInfo")]
     public IDeviceInfo ReadDeviceInfo()
-    {
-        return DeviceInfo.Current;
-    }
+        => DeviceInfo.Current;
 
     [JSInvokable("displayInfo")]
     public IDeviceDisplay DisplayInfo()
-    {
-        return DeviceDisplay.Current;
-    }
+        => DeviceDisplay.Current;
 }

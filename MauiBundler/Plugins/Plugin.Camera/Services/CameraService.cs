@@ -42,7 +42,7 @@ public class CameraService : ICameraService
     {
         if (photo != null)
         {
-            using Stream sourceStream = await photo.OpenReadAsync();
+            await using Stream sourceStream = await photo.OpenReadAsync();
             byte[] buffer = new byte[sourceStream.Length];
             sourceStream.Position = 0;
             var _ = await sourceStream.ReadAsync(buffer, 0, buffer.Length);

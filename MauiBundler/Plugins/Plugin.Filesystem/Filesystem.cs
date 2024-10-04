@@ -9,7 +9,6 @@ namespace Plugin.Filesystem;
 [Plugin("Filesystem.cs.js", Name = "Filesystem")]
 public class Filesystem
 {
-
     [JSInvokable("Initialize")]
     public static async Task Initialize()
     {
@@ -18,6 +17,6 @@ public class Filesystem
 
         await js.InitializePluginInterop(fs, typeof(Filesystem));
         
-        Console.WriteLine("MauiBundler::Initialize -> Filesystemplugin initialization from interop!");
+        Console.WriteLine("MauiBundler::Initialize -> Filesystem plugin initialization from interop!");
     }    
 }

@@ -2,7 +2,6 @@ using Microsoft.JSInterop;
 
 namespace Plugin.Filesystem.Services;
 
-
 public class FilesystemService : IFilesystemService
 {
     [JSInvokable("deleteFile")]

@@ -12,19 +12,19 @@ static partial class AppActionsExtensions
 
     [SupportedOSPlatform("android25.0")]
     internal static AppAction ToAppAction(this ShortcutInfo shortcutInfo) =>
-        new AppAction(shortcutInfo.Id, shortcutInfo.ShortLabel!, shortcutInfo.LongLabel);
+        new(shortcutInfo.Id, shortcutInfo.ShortLabel!, shortcutInfo.LongLabel);
 
-    const string extraAppActionId = "EXTRA_XE_APP_ACTION_ID";
-    const string extraAppActionTitle = "EXTRA_XE_APP_ACTION_TITLE";
-    const string extraAppActionSubtitle = "EXTRA_XE_APP_ACTION_SUBTITLE";
-    const string extraAppActionIcon = "EXTRA_XE_APP_ACTION_ICON";
+    private const string ExtraAppActionId = "EXTRA_XE_APP_ACTION_ID";
+    private const string ExtraAppActionTitle = "EXTRA_XE_APP_ACTION_TITLE";
+    private const string ExtraAppActionSubtitle = "EXTRA_XE_APP_ACTION_SUBTITLE";
+    private const string ExtraAppActionIcon = "EXTRA_XE_APP_ACTION_ICON";
 
     internal static AppAction ToAppAction(this Android.Content.Intent intent)
         => new AppAction(
-            intent.GetStringExtra(extraAppActionId)!,
-            intent.GetStringExtra(extraAppActionTitle)!,
-            intent.GetStringExtra(extraAppActionSubtitle),
-            intent.GetStringExtra(extraAppActionIcon));
+            intent.GetStringExtra(ExtraAppActionId)!,
+            intent.GetStringExtra(ExtraAppActionTitle)!,
+            intent.GetStringExtra(ExtraAppActionSubtitle),
+            intent.GetStringExtra(ExtraAppActionIcon));
 
     [SupportedOSPlatform("android25.0")]
     internal static ShortcutInfo ToShortcutInfo(this AppAction action)
@@ -49,10 +49,10 @@ static partial class AppActionsExtensions
         var intent = new Android.Content.Intent(IntentAction);
         intent.SetPackage(context.PackageName);
         intent.SetFlags(ActivityFlags.ClearTop | ActivityFlags.SingleTop);
-        intent.PutExtra(extraAppActionId, action.Id);
-        intent.PutExtra(extraAppActionTitle, action.Title);
-        intent.PutExtra(extraAppActionSubtitle, action.Subtitle);
-        intent.PutExtra(extraAppActionIcon, action.Icon);
+        intent.PutExtra(ExtraAppActionId, action.Id);
+        intent.PutExtra(ExtraAppActionTitle, action.Title);
+        intent.PutExtra(ExtraAppActionSubtitle, action.Subtitle);
+        intent.PutExtra(ExtraAppActionIcon, action.Icon);
 
         shortcut.SetIntent(intent);
 

@@ -15,9 +15,9 @@ public sealed class AppActionsService : IAppActionsService
             throw new FeatureNotSupportedException();
 
         List<AppAction> actions = new()
-                    {
-                        new AppAction("battery_info", "Battery Info")
-                    };
+        {
+            new AppAction("battery_info", "Battery Info")
+        };
 #pragma warning disable CA1416 // Known false positive with lambda
         using var list = new JavaList<ShortcutInfo>(actions.Select(a => a.ToShortcutInfo()));
 #pragma warning disable CA1416
@@ -26,7 +26,5 @@ public sealed class AppActionsService : IAppActionsService
     }
 
     public Task AppActionCalled(string id, string content)
-    {
-        throw new NotImplementedException();
-    }
+        => throw new NotImplementedException();
 }

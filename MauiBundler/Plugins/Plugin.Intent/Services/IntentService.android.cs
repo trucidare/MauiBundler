@@ -7,7 +7,7 @@ namespace Plugin.Intent.Services;
 
 public class IntentService : IIntentService
 {
-    private readonly IPluginService jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
+    private readonly IPluginService _jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
 
     [JSInvokable("addIntentFilter")]
     public void AddIntentFilter(string category, string action)
@@ -22,17 +22,14 @@ public class IntentService : IIntentService
     }
 
     public async Task PublishIntent(string action, string content)
-    {
-        await jsRuntime.InprocessJSRuntime!.InvokeVoidAsync($"MauiBundler.Plugins.{nameof(Intent)}.publishIntent", action, content);
-    }
+        => await _jsRuntime.InprocessJsRuntime!.InvokeVoidAsync($"MauiBundler.Plugins.{nameof(Intent)}.publishIntent",
+                action, content);
 }
 
 public class IntentReceiver : BroadcastReceiver
 {
-    readonly IIntentService intentService = IPlatformApplication.Current?.Services.GetService<IIntentService>()!;
+    readonly IIntentService _intentService = IPlatformApplication.Current?.Services.GetService<IIntentService>()!;
 
     public override void OnReceive(Context? context, Android.Content.Intent? intent)
-    {
-        intentService.PublishIntent(intent?.Action!, intent?.JsonFromIntent()!);
-    }
+        => _intentService.PublishIntent(intent?.Action!, intent?.JsonFromIntent()!);
 }
