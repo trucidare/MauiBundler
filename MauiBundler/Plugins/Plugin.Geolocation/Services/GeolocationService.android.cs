@@ -4,13 +4,12 @@ using Android.OS;
 using Android.Runtime;
 using MauiBundler.Abstractions.Interfaces;
 using Microsoft.JSInterop;
-using Plugin.Helper;
 
 namespace Plugin.Geolocation.Services;
 
 public class GeoLocationService : Java.Lang.Object, IGeoLocationService, ILocationListener
 {
-    private readonly IPluginService jsRuntime = ServiceHelper.GetService<IPluginService>();
+    private readonly IPluginService jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
 
     private readonly LocationManager locationManager;
 

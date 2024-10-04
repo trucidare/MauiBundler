@@ -1,4 +1,3 @@
-using Plugin.Helper;
 using Microsoft.JSInterop;
 using Plugin.Filesystem.Services;
 using MauiBundler.Abstractions.Extensions;
@@ -14,8 +13,8 @@ public class Filesystem
     [JSInvokable("Initialize")]
     public static async Task Initialize()
     {
-        var js = ServiceHelper.GetService<IPluginService>();
-        var fs = ServiceHelper.GetService<IFilesystemService>();
+        var js = IPlatformApplication.Current?.Services.GetService<IPluginService>();
+        var fs = IPlatformApplication.Current?.Services.GetService<IFilesystemService>();
 
         await js.InitializePluginInterop(fs, typeof(Filesystem));
         

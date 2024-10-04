@@ -1,14 +1,13 @@
 using Android.Content;
 using MauiBundler.Abstractions.Interfaces;
 using Microsoft.JSInterop;
-using Plugin.Helper;
 using Plugin.Intent.Extensions;
 
 namespace Plugin.Intent.Services;
 
 public class IntentService : IIntentService
 {
-    private readonly IPluginService jsRuntime = ServiceHelper.GetService<IPluginService>();
+    private readonly IPluginService jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
 
     [JSInvokable("addIntentFilter")]
     public void AddIntentFilter(string category, string action)
@@ -30,7 +29,7 @@ public class IntentService : IIntentService
 
 public class IntentReceiver : BroadcastReceiver
 {
-    readonly IIntentService intentService = ServiceHelper.GetService<IIntentService>();
+    readonly IIntentService intentService = IPlatformApplication.Current?.Services.GetService<IIntentService>()!;
 
     public override void OnReceive(Context? context, Android.Content.Intent? intent)
     {
