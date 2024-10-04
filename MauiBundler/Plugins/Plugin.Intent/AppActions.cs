@@ -12,8 +12,8 @@ public class AppActions
     [JSInvokable("Initialize")]
     public static async Task Initialize()
     {
-        var js = IPlatformApplication.Current?.Services.GetService<IPluginService>();
-        var fs = IPlatformApplication.Current?.Services.GetService<IAppActionsService>();
+        var js = IPlatformApplication.Current!.Services.GetRequiredService<IPluginService>();
+        var fs = IPlatformApplication.Current!.Services.GetRequiredService<IAppActionsService>();
 
         await js.InitializePluginInterop(fs, typeof(AppActions));
         

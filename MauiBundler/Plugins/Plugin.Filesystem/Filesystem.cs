@@ -13,8 +13,8 @@ public class Filesystem
     [JSInvokable("Initialize")]
     public static async Task Initialize()
     {
-        var js = IPlatformApplication.Current?.Services.GetService<IPluginService>();
-        var fs = IPlatformApplication.Current?.Services.GetService<IFilesystemService>();
+        var js = IPlatformApplication.Current!.Services.GetRequiredService<IPluginService>();
+        var fs = IPlatformApplication.Current!.Services.GetRequiredService<IFilesystemService>();
 
         await js.InitializePluginInterop(fs, typeof(Filesystem));
         

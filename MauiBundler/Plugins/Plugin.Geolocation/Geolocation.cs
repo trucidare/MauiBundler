@@ -12,8 +12,8 @@ public class GeoLocation
     [JSInvokable("Initialize")]
     public static async Task Initialize()
     {
-        var js = IPlatformApplication.Current?.Services.GetService<IPluginService>();
-        var fs = IPlatformApplication.Current?.Services.GetService<IGeoLocationService>();
+        var js = IPlatformApplication.Current!.Services.GetRequiredService<IPluginService>();
+        var fs = IPlatformApplication.Current!.Services.GetRequiredService<IGeoLocationService>();
 
         await js.InitializePluginInterop(fs, typeof(GeoLocation));
         
