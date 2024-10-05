@@ -42,5 +42,10 @@
 	<string>This app needs access to the photo gallery for picking photos and videos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app needs access to photos gallery for picking photos and videos.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Scan for bluetooth devices</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Scan for bluetooth peripherals</string>
+
 </dict>
 </plist>

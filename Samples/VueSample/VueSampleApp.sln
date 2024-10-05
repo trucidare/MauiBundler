@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Camera", "..\..\Maui
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.AppActions", "..\..\MauiBundler\Plugins\Plugin.AppActions\Plugin.AppActions.csproj", "{A1868DFF-DD32-47F8-A955-E8C09C382565}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Bluetooth", "..\..\MauiBundler\Plugins\Plugin.Bluetooth\Plugin.Bluetooth.csproj", "{C8A8AFF3-FD84-4CDC-9C45-5F25B829F3CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{A1868DFF-DD32-47F8-A955-E8C09C382565}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1868DFF-DD32-47F8-A955-E8C09C382565}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1868DFF-DD32-47F8-A955-E8C09C382565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A8AFF3-FD84-4CDC-9C45-5F25B829F3CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A8AFF3-FD84-4CDC-9C45-5F25B829F3CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A8AFF3-FD84-4CDC-9C45-5F25B829F3CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A8AFF3-FD84-4CDC-9C45-5F25B829F3CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,5 +91,6 @@ Global
 		{E6594857-C937-4839-BD61-C52917E39745} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
 		{87F93CFF-23C8-4E11-88A2-BB5447B62B98} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
 		{A1868DFF-DD32-47F8-A955-E8C09C382565} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
+		{C8A8AFF3-FD84-4CDC-9C45-5F25B829F3CB} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
 	EndGlobalSection
 EndGlobal

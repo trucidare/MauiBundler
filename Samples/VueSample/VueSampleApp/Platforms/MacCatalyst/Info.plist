@@ -28,5 +28,9 @@
 	<string>Assets.xcassets/appicon.appiconset</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Take a picture</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Scan for bluetooth devices</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Scan for bluetooth peripherals</string>
 </dict>
 </plist>

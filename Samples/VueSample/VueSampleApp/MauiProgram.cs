@@ -15,7 +15,7 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			})
-		.Services.AddMauiBundler(builder.Configuration, typeof(App).Assembly);
+		.Services.AddMauiBundler(builder.Configuration, typeof(App).Assembly, builder);
 
 #if DEBUG
 		builder.Logging.AddDebug();
