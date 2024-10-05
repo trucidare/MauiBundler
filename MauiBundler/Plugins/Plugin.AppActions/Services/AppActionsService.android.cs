@@ -1,10 +1,10 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.Runtime;
-using Plugin.Intent.Services.Extensions;
-using AppAction = Plugin.Intent.Models.AppAction;
+using Plugin.AppActions.Services.Extensions;
+using AppAction = Plugin.AppActions.Models.AppAction;
 
-namespace Plugin.Intent.Services;
+namespace Plugin.AppActions.Services;
 
 public sealed class AppActionsService : IAppActionsService
 {

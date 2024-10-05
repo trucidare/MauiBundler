@@ -1,4 +1,4 @@
-namespace Plugin.Intent.Services;
+namespace Plugin.AppActions.Services;
 
 public interface IAppActionsService
 {

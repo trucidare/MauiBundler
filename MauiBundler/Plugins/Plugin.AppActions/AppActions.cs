@@ -1,10 +1,10 @@
 using MauiBundler.Abstractions.Attributes;
+using MauiBundler.Abstractions.Extensions;
 using MauiBundler.Abstractions.Interfaces;
 using Microsoft.JSInterop;
-using Plugin.Intent.Services;
-using MauiBundler.Abstractions.Extensions;
-namespace Plugin.Intent;
+using Plugin.AppActions.Services;
 
+namespace Plugin.AppActions;
 
 [Plugin("AppActions.cs.js", Name = "AppActions")]
 public class AppActions

@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Device", "..\..\Maui
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Camera", "..\..\MauiBundler\Plugins\Plugin.Camera\Plugin.Camera.csproj", "{87F93CFF-23C8-4E11-88A2-BB5447B62B98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.AppActions", "..\..\MauiBundler\Plugins\Plugin.AppActions\Plugin.AppActions.csproj", "{A1868DFF-DD32-47F8-A955-E8C09C382565}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{87F93CFF-23C8-4E11-88A2-BB5447B62B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87F93CFF-23C8-4E11-88A2-BB5447B62B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87F93CFF-23C8-4E11-88A2-BB5447B62B98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1868DFF-DD32-47F8-A955-E8C09C382565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1868DFF-DD32-47F8-A955-E8C09C382565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1868DFF-DD32-47F8-A955-E8C09C382565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1868DFF-DD32-47F8-A955-E8C09C382565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,5 +84,6 @@ Global
 		{19B67A57-019B-47ED-9FB5-22382042D7FB} = {126B70EA-CCF7-4417-A8ED-BA8FC6087756}
 		{E6594857-C937-4839-BD61-C52917E39745} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
 		{87F93CFF-23C8-4E11-88A2-BB5447B62B98} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
+		{A1868DFF-DD32-47F8-A955-E8C09C382565} = {98F543E5-D419-44EA-BCEC-D2BCDDD4723A}
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
-using Plugin.Intent.Services;
+using Plugin.AppActions.Services;
 
-namespace Plugin.Intent;
+namespace Plugin.AppActions;
 
 public static class Startup
 {
@@ -9,6 +9,6 @@ public static class Startup
     {
         Console.WriteLine($"MauiBundler::ConfigureServices -> Configure Intent services");
         
-        services.AddSingleton<IIntentService, IntentService>();
+        services.AddSingleton<IAppActionsService, AppActionsService>();
     }
 }

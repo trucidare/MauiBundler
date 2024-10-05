@@ -2,13 +2,14 @@ using System.Runtime.Versioning;
 using Android.Content;
 using Android.Content.PM;
 using Android.Graphics.Drawables;
-using AppAction = Plugin.Intent.Models.AppAction;
+using AppAction = Plugin.AppActions.Models.AppAction;
 
-namespace Plugin.Intent.Services.Extensions;
+namespace Plugin.AppActions.Services.Extensions;
 
 static partial class AppActionsExtensions
 {
     public const string IntentAction = "ACTION_XE_APP_ACTION";
+    public const string ShortcutType = "XE_APP_ACTION_TYPE";
 
     [SupportedOSPlatform("android25.0")]
     internal static AppAction ToAppAction(this ShortcutInfo shortcutInfo) =>
