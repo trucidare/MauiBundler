@@ -21,14 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Attributes\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Attributes\" />
-  </ItemGroup>
-
-    <ItemGroup>
     <Content Remove="tsconfig.json" />
     <Content Include="tsconfig.json" PublishFolderType="None" />
   </ItemGroup>  
+
 </Project>
