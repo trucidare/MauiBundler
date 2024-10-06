@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Configuration;
-using Plugin.Camera.Serices;
+using Plugin.Camera.Services;
 
 namespace Plugin.Camera;
 

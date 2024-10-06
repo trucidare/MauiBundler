@@ -8,10 +8,8 @@ using AppAction = Plugin.AppActions.Models.AppAction;
 
 namespace Plugin.AppActions.Services;
 
-public sealed class AppActionsService : IAppActionsService, IPlatformAppActions
+public sealed class AppActionsService(IPluginService pluginService) : IAppActionsService, IPlatformAppActions
 {
-    private readonly IPluginService _jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
-
     [JSInvokable("addAppAction")]
     public void AddAppAction(string id, string title, string subtitle, string icon)
     {
@@ -25,7 +23,7 @@ public sealed class AppActionsService : IAppActionsService, IPlatformAppActions
     }
 
     public async Task AppActionCalled(string id, string content)
-        => await _jsRuntime.InprocessJsRuntime!.InvokeVoidAsync(
+        => await pluginService.InprocessJsRuntime!.InvokeVoidAsync(
             $"MauiBundler.Plugins.{nameof(AppActions)}.appActionCalled", id, content);
 
     public void PerformActionForShortcutItem(UIApplication application, UIApplicationShortcutItem shortcutItem, UIOperationHandler completionHandler)

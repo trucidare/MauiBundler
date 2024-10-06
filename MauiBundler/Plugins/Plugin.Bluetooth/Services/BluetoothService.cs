@@ -7,9 +7,8 @@ using Shiny.BluetoothLE.Managed;
 
 namespace Plugin.Bluetooth.Services;
 
-public class BluetoothService(IBleManager bleManager) : IBluetoothService
+public class BluetoothService(IBleManager bleManager, IPluginService pluginService) : IBluetoothService
 {
-    private readonly IPluginService _jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
     private IManagedScan? _scanner;
     
     [JSInvokable("scanForDevices")]
@@ -42,6 +41,6 @@ public class BluetoothService(IBleManager bleManager) : IBluetoothService
     }
     
     private async void DeviceFound(ManagedScanResult device)
-        => await _jsRuntime.InprocessJsRuntime!.InvokeVoidAsync(
+        => await pluginService.InprocessJsRuntime!.InvokeVoidAsync(
             $"MauiBundler.Plugins.{nameof(Bluetooth)}.deviceFound", device);
 }

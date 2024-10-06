@@ -1,7 +1,7 @@
-using Plugin.Camera.Models;
 using Microsoft.JSInterop;
+using Plugin.Camera.Models;
 
-namespace Plugin.Camera.Serices;
+namespace Plugin.Camera.Services;
 
 public interface ICameraService
 {

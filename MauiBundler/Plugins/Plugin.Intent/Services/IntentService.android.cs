@@ -5,10 +5,8 @@ using Plugin.Intent.Extensions;
 
 namespace Plugin.Intent.Services;
 
-public class IntentService : IIntentService
+public class IntentService(IPluginService pluginService) : IIntentService
 {
-    private readonly IPluginService _jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
-
     [JSInvokable("addIntentFilter")]
     public void AddIntentFilter(string category, string action)
     {
@@ -22,7 +20,7 @@ public class IntentService : IIntentService
     }
 
     public async Task PublishIntent(string action, string content)
-        => await _jsRuntime.InprocessJsRuntime!.InvokeVoidAsync($"MauiBundler.Plugins.{nameof(Intent)}.publishIntent",
+        => await pluginService.InprocessJsRuntime!.InvokeVoidAsync($"MauiBundler.Plugins.{nameof(Intent)}.publishIntent",
                 action, content);
 }
 

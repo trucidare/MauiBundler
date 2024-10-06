@@ -9,11 +9,14 @@ namespace Plugin.Geolocation.Services;
 
 public class GeoLocationService : Java.Lang.Object, IGeoLocationService, ILocationListener
 {
-    private readonly IPluginService _jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
+    private readonly IPluginService _pluginService;
     private readonly LocationManager? _locationManager;
 
-    public GeoLocationService()
-        => _locationManager ??= (LocationManager)MauiApplication.Current.GetSystemService(Context.LocationService)!;
+    public GeoLocationService(IPluginService pluginService)
+    {
+        _pluginService = pluginService;
+        _locationManager ??= (LocationManager)MauiApplication.Current.GetSystemService(Context.LocationService)!;
+    }
 
     [JSInvokable("start")]
     public void Start()
@@ -61,7 +64,7 @@ public class GeoLocationService : Java.Lang.Object, IGeoLocationService, ILocati
             var loc = new Models.Location(location.Latitude, location.Longitude, location.Bearing, location.Altitude,
                 location.Accuracy);
             Task.Run(async () =>
-                await _jsRuntime.InprocessJsRuntime!.InvokeVoidAsync(
+                await _pluginService.InprocessJsRuntime!.InvokeVoidAsync(
                     $"MauiBundler.Plugins.{nameof(GeoLocation)}.locationChanged", loc));
         }
     }
@@ -76,7 +79,7 @@ public class GeoLocationService : Java.Lang.Object, IGeoLocationService, ILocati
         => Task.Run(async () => await PublishStatusChangedEvent($"{provider} change his status and now it's {status}"));
 
     private async Task PublishStatusChangedEvent(string message)
-        => await _jsRuntime.InprocessJsRuntime!.InvokeVoidAsync(
+        => await _pluginService.InprocessJsRuntime!.InvokeVoidAsync(
             $"MauiBundler.Plugins.{nameof(GeoLocation)}.statusChanged", message);
 
 }

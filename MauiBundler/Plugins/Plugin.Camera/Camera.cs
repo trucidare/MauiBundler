@@ -2,7 +2,7 @@ using Microsoft.JSInterop;
 using MauiBundler.Abstractions.Extensions;
 using MauiBundler.Abstractions.Attributes;
 using MauiBundler.Abstractions.Interfaces;
-using Plugin.Camera.Serices;
+using Plugin.Camera.Services;
 
 namespace Plugin.Camera;
 

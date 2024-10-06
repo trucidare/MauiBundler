@@ -14,6 +14,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddBlazorWebViewDeveloperTools();
         services.AddMauiBlazorWebView();
+        services.AddBlazorWebView();
 	    services.AddMauiBundlerInternal(configuration, anchor, builder);
 
          if (Preferences.Get(Constants.InstallationGuid, null) == null)

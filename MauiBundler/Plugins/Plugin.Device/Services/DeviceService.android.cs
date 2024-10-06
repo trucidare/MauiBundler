@@ -4,7 +4,7 @@ using static Android.Provider.Settings;
 
 namespace Plugin.Device.Services;
 
-public class DeviceService : IDeviceService
+public partial class DeviceService : IDeviceService
 {
     [JSInvokable("installationId")]
     public string? InstallationId()

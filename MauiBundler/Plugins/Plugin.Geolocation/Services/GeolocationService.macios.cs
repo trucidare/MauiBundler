@@ -6,12 +6,12 @@ namespace Plugin.Geolocation.Services;
 
 public class GeoLocationService : IGeoLocationService
 {
-    private readonly IPluginService _jsRuntime = IPlatformApplication.Current?.Services.GetService<IPluginService>()!;
-
+    private readonly IPluginService _pluginService;
     private readonly CLLocationManager _iosLocationManager;
 
-    public GeoLocationService()
+    public GeoLocationService(IPluginService pluginService)
     {
+        _pluginService = pluginService;
         _iosLocationManager ??= new CLLocationManager()
         {
             DesiredAccuracy = CLLocation.AccuracyBest,
@@ -49,7 +49,7 @@ public class GeoLocationService : IGeoLocationService
         var loc = new Models.Location(locations[^1].Coordinate.Latitude, locations[^1].Coordinate.Longitude,
             (float)locations[^1].Course, locations[^1].Altitude, (float)locations[^1].CourseAccuracy!);
         Task.Run(async () =>
-            await _jsRuntime.InprocessJsRuntime!.InvokeVoidAsync(
+            await _pluginService.InprocessJsRuntime!.InvokeVoidAsync(
                 $"MauiBundler.Plugins.{nameof(GeoLocation)}.locationChanged", loc));
     }
 
@@ -58,6 +58,6 @@ public class GeoLocationService : IGeoLocationService
         => _iosLocationManager.StopUpdatingLocation();
     
     private async Task PublishStatusChangedEvent(string message)
-        => await _jsRuntime.InprocessJsRuntime!.InvokeVoidAsync(
+        => await _pluginService.InprocessJsRuntime!.InvokeVoidAsync(
             $"MauiBundler.Plugins.{nameof(GeoLocation)}.statusChanged", message);
 }
