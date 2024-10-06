@@ -4,6 +4,7 @@ using MauiBundler.Abstractions;
 using Microsoft.AspNetCore.Components;
 using MauiBundler.Abstractions.Extensions;
 using MauiBundler.Abstractions.Interfaces;
+using MauiBundler.Extensions;
 
 namespace MauiBundler.Bootstrap;
 

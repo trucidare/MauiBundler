@@ -2,7 +2,7 @@ using MauiBundler.Abstractions.Interfaces;
 using Microsoft.JSInterop;
 using System.Reflection;
 
-namespace MauiBundler.Abstractions.Services;
+namespace MauiBundler.Services;
 
 public class PluginService : IPluginService
 {

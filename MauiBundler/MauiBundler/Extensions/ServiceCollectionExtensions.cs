@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using MauiBundler.Abstractions;
 using MauiBundler.Abstractions.Interfaces;
-using MauiBundler.Abstractions.Services;
+using MauiBundler.Services;
 using Microsoft.Extensions.Configuration;
 
 namespace MauiBundler.Extensions;

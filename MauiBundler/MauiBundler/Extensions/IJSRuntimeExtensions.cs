@@ -1,8 +1,8 @@
 using System.Reflection;
-using Microsoft.JSInterop;
 using MauiBundler.Abstractions.Attributes;
+using Microsoft.JSInterop;
 
-namespace MauiBundler.Abstractions.Extensions;
+namespace MauiBundler.Extensions;
 
 public static class IjsRuntimeExtensions
 {
